@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include "IntVector.h"
-#include <String.h>
+#include <string.h>
 
 int num_error = 0;	
 
-//  NO_ERROR 0
+// 	NO_ERROR 0
 //	READ_ERROR 1
 //	WRITE_ERROR 2
 //	MEM_ALLOC_ERROR 3
@@ -56,6 +56,9 @@ IntVector *int_vector_copy(const IntVector *v_original)
 
 void int_vector_free(IntVector *v)
 {
+	if (v == NULL) {
+		return;
+	}
 	free(v->data);
 	free(v);
 }

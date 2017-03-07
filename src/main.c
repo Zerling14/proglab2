@@ -4,7 +4,7 @@
 void print_vector(IntVector *v)
 {
 	printf("Printing IntVector\n");
-	printf("data_pointer:%p size:%d capacity:%d\n", v->data, v->size, v->capacity);
+	printf("data_pointer:%p size:%d capacity:%d\n", v->data, (int)v->size, (int)v->capacity);
 	if((v->data == NULL) || (v->capacity == 0)){
 		return;
 	}
@@ -16,6 +16,10 @@ void print_vector(IntVector *v)
 
 int main()
 {
+	IntVector *z = NULL;
+
+	int_vector_free(z);	
+	
 	printf("Create new IntVector\n");
 	IntVector *v = int_vector_new(5);
 	if (v == NULL){
@@ -54,7 +58,7 @@ int main()
 	
 	endl
 	
-	printf("size:%d capacity:%d\n", int_vector_get_size(v), int_vector_get_capacity(v));
+	printf("size: %zu capacity:%d\n", int_vector_get_size(v), (int)int_vector_get_capacity(v));
 	
 	endl
 	
@@ -76,6 +80,8 @@ int main()
 	
 	int_vector_shrink_to_fit(v);
 	print_vector(v);
+
+	int_vector_free(v);
 	
 	endl
 	return 0;
