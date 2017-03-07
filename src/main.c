@@ -16,6 +16,18 @@ void print_vector(IntVector *v)
 
 int main()
 {
+	Vector *k = vector_new(12);
+	
+		
+
+	int_vector_set_item(k, 0, )	
+	
+	void *int_vector_get_item(const IntVector *v, size_t index, size_t type_size);
+
+	void int_vector_set_item(IntVector *v, size_t index, void *item, size_t type_size);	
+
+	return 0;
+
 	IntVector *z = NULL;
 
 	int_vector_free(z);	

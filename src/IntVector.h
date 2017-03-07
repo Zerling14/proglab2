@@ -8,7 +8,7 @@ typedef struct {
 } IntVector;
 
 typedef enum {
-    NO_ERROR,
+	NO_ERROR,
 	READ_ERROR,
 	WRITE_ERROR,
 	MEM_ALLOC_ERROR
